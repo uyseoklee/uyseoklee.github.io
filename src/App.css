@@ -1,0 +1,59 @@
+#root {
+  width: 100%;
+}
+
+.app-container {
+  margin-top: 58px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.profile-photo {
+  width: 270px;
+}
+
+.profile-panel {
+  max-width: 270px;
+  padding: 1rem;
+}
+
+.resume-panel {
+  max-width: 700px;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+  }
+  .profile-panel,
+  .resume-panel {
+    flex: none;
+    max-width: none;
+    padding: 1rem;
+  }
+  .profile-photo {
+    width: 100%;
+  }
+}
+
+.button-tab {
+  display: flex;
+}
+.button-tab button {
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: none;
+  font-size: 18px;
+  background: none;
+  padding: 5px 15px 5px 15px;
+  min-width: 80px;
+}
+
+.button-tab button.selected {
+  border-bottom: 1px solid grey;
+}
