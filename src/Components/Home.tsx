@@ -1,6 +1,5 @@
 import React from "react";
 import { SectionConfigs } from "./Constants";
-import Teaching from "./Teaching";
 
 const Home: React.FC = () => {
   return (
