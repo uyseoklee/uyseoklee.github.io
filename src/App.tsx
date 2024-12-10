@@ -1,13 +1,13 @@
 import React from "react";
 import Profile from "./Components/Profile";
-import Resume from "./Components/Resume";
+import Home from "./Components/Home";
 import "./App.css";
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
       <Profile />
-      <Resume />
+      <Home />
     </div>
   );
 };

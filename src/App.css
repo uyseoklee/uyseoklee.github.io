@@ -57,3 +57,10 @@
 .button-tab button.selected {
   border-bottom: 1px solid grey;
 }
+
+/* remove bullets from unordered lists */
+
+ul {
+  list-style: none;
+  /*padding-left: 0;*/
+}
