@@ -74,3 +74,9 @@ a {
   color: blue; /* This will apply blue color to all links */
   text-decoration: none; /* Optional: removes underline from links */
 }
+
+/*Font boldness of website*/
+body {
+  font-weight: 500; /* Adjust the value between 100 to 900 for different boldness levels */
+  font-family: Arial, Helvetica, sans-serif; /* Change to a web-safe font */
+}
