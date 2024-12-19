@@ -26,9 +26,7 @@ const Home: React.FC = () => {
           <ul>
             {section.workingpapers.map((publication, pubIndex) => (
               <li key={pubIndex}>
-                <a href={publication.link} target="_blank" rel="noopener noreferrer">
                 <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
-                </a>
               {/* Render authors with clickable links */}
               <div style={{ fontSize: '16px', marginBottom: '4px' }}>
                 {Array.isArray(publication.description) ? (
@@ -68,6 +66,25 @@ const Home: React.FC = () => {
                   publication.description
                 )}
               </div>
+                {/* Render custom links dynamically with square brackets */}
+                {publication.links && publication.links.length > 0 && (
+                  <div style={{ fontSize: '16px', color: 'black', marginBottom: '8px' }}>
+                    [
+                    {publication.links.map((link, index) => (
+                      <span key={index}>
+                        {index > 0 && " | "} {/* Add separator between links */}
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label}
+                        </a>
+                      </span>
+                    ))}
+                    &nbsp;]
+                  </div>
+                )}                        
               </li>
             ))}
           </ul>
@@ -83,45 +100,46 @@ const Home: React.FC = () => {
             {section.worksinprogress.map((publication, pubIndex) => (
               <li key={pubIndex}>
                 <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
-              {/* Render authors with clickable links */}
-              <div style={{ fontSize: '16px', marginBottom: '4px' }}>
-                {Array.isArray(publication.description) ? (
-                  <>
-                    (with{" "}
-                    {publication.description.map((author, index) => {
-                      const isLast = index === publication.description.length - 1;
-                      const totalAuthors = publication.description.length;
+             
+                {/* Render authors with clickable links */}
+                <div style={{ fontSize: '16px', marginBottom: '4px' }}>
+                  {Array.isArray(publication.description) ? (
+                    <>
+                      (with{" "}
+                      {publication.description.map((author, index) => {
+                        const isLast = index === publication.description.length - 1;
+                        const totalAuthors = publication.description.length;
 
-                      return (
-                        <span key={index}>
-                          {/* Add commas for all but the first and last author */}
-                          {index > 0 && (totalAuthors > 2 || !isLast ? ", " : "")}
+                        return (
+                          <span key={index}>
+                            {/* Add commas for all but the first and last author */}
+                            {index > 0 && (totalAuthors > 2 || !isLast ? ", " : "")}
 
-                          {/* Insert "and" before the last author */}
-                          {isLast && index > 0 && " and "}
+                            {/* Insert "and" before the last author */}
+                            {isLast && index > 0 && " and "}
 
-                          {/* Render the author name with link if available */}
-                          {author.link ? (
-                            <a
-                              href={author.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ color: 'blue' }} // Consistent link color
-                            >
-                              {author.name}
-                            </a>
-                          ) : (
-                            <span>{author.name}</span>
-                          )}
-                        </span>
-                      );
-                    })}
-                    )
-                  </>
-                ) : (
-                  publication.description
-                )}
-              </div>
+                            {/* Render the author name with link if available */}
+                            {author.link ? (
+                              <a
+                                href={author.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: 'blue' }} // Consistent link color
+                              >
+                                {author.name}
+                              </a>
+                            ) : (
+                              <span>{author.name}</span>
+                            )}
+                          </span>
+                        );
+                      })}
+                      )
+                    </>
+                  ) : (
+                    publication.description
+                  )}
+                </div>
               </li>
             ))}
           </ul>
