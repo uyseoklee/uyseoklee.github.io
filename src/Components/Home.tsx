@@ -1,5 +1,6 @@
 import React from "react";
-import { SectionConfigs } from "./Constants";
+import { WPSectionConfigs } from "./WorkingPapers";
+import { WIPSectionConfigs } from "./WorkInProgress";
 
 const Home: React.FC = () => {
   return (
@@ -18,18 +19,32 @@ const Home: React.FC = () => {
       </section>
         
       {/* Dynamically render sections from SectionConfigs */}
-      {SectionConfigs.map((section, index) => (
+      {WPSectionConfigs.map((section, index) => (
         <section key={index}>
           <h2>{section.title}</h2>
-          <p>{section.description}</p>
-
           {/* Render each publication in this section */}
           <ul>
-            {section.publications.map((publication, pubIndex) => (
+            {section.workingpapers.map((publication, pubIndex) => (
               <li key={pubIndex}>
                 <a href={publication.link} target="_blank" rel="noopener noreferrer">
                 <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
                 </a>
+                {/* Only render the description without the colon */}
+                <span> {publication.description}</span> {/* No colon here */}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <hr />
+      {WIPSectionConfigs.map((section, index) => (
+        <section key={index}>
+          <h2>{section.title}</h2>
+          {/* Render each publication in this section */}
+          <ul>
+            {section.worksinprogress.map((publication, pubIndex) => (
+              <li key={pubIndex}>
+                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
                 {/* Only render the description without the colon */}
                 <span> {publication.description}</span> {/* No colon here */}
               </li>
