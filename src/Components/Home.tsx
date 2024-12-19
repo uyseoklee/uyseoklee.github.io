@@ -23,10 +23,10 @@ const Home: React.FC = () => {
         <section key={index}>
           <h2>{section.title}</h2>
           {/* Render each publication in this section */}
-          <ul>
+          <ul style={{ padding: 0, margin: 0 }}>
             {section.workingpapers.map((publication, pubIndex) => (
               <li key={pubIndex}>
-                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
+                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold', marginBottom: '4px' }}>{publication.title}</div>
               {/* Render authors with clickable links */}
               <div style={{ fontSize: '16px', marginBottom: '4px' }}>
                 {Array.isArray(publication.description) ? (
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
               </div>
                 {/* Render custom links dynamically with square brackets */}
                 {publication.links && publication.links.length > 0 && (
-                  <div style={{ fontSize: '16px', color: 'black', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '16px', color: 'black', marginBottom: '4px' }}>
                     [
                     {publication.links.map((link, index) => (
                       <span key={index}>
@@ -96,10 +96,10 @@ const Home: React.FC = () => {
         <section key={index}>
           <h2>{section.title}</h2>
           {/* Render each publication in this section */}
-          <ul>
+          <ul style={{ padding: 0, margin: 0 }}>
             {section.worksinprogress.map((publication, pubIndex) => (
               <li key={pubIndex}>
-                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
+                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold', marginBottom: '4px' }}>{publication.title}</div>
              
                 {/* Render authors with clickable links */}
                 <div style={{ fontSize: '16px', marginBottom: '4px' }}>
