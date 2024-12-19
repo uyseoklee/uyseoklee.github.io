@@ -4,25 +4,12 @@ export interface Publication {
   link: string;
 }
 
-export interface WorkInProgress {
-  title: string;
-  description: string;
-  link?: never; // No link property
-}
 
-export interface SectionDefinitionPublication {
+export interface SectionDefinition {
     title: string;
     description: string;
     publications: Publication[];
 }
-
-export interface SectionDefinitionWorkInProgress {
-  title: string;
-  description: string;
-  publications: WorkInProgress[];
-}
-
-export type SectionDefinition = SectionDefinitionPublication | SectionDefinitionWorkInProgress;
 
 export const SectionConfigs: SectionDefinition[] = [
     //{
@@ -54,6 +41,7 @@ export const SectionConfigs: SectionDefinition[] = [
         {
           title: "The Unintended Consequences of Technical Change: Evidence from the Green Revolution in Indonesia",
           description: "(with Yeonha Jung and Gedeon Lim)",
+          link: "",
         },
       ],
     },
