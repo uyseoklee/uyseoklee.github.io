@@ -1,13 +1,12 @@
 export interface Publication {
   title: string;
-  description: string;
-  link: string;
+  description: string | { name: string; link?: string }[];
+  links?: { label: string, url: string }[]; // Custom links for each publication
 }
 
 export interface WorkInProgress {
   title: string;
-  description: string;
-  link?: never; // No link property
+  description: string | { name: string; link?: string }[];
 }
 
 export interface SectionDefinitionPublication {
@@ -42,8 +41,16 @@ export const SectionConfigs: SectionDefinition[] = [
       publications: [
         {
           title: "Internal Versus Institutional Barriers to Gender Equality: Evidence From British Politics",
-          description: "(with Noor Kumar, Matt Lowe, and Olaitan Ogunnote)",
-          link: "https://github.com/uyseoklee/uyseoklee.github.io/raw/main/papers/Kumar-Lee-Lowe-Ogunnote-25may24-PMQs_compressed.pdf",
+          description: [
+            { name: "Noor Kumar", link: "" },
+            { name: "Matt Lowe", link: "https://mattlowe.site/" },
+            { name: "Olaitan Ogunnote", link: "" },
+          ],
+          links: [
+            { label: "Draft (Sept 2024) ", url: "https://github.com/uyseoklee/uyseoklee.github.io/raw/main/papers/Kumar-Lee-Lowe-Ogunnote-25may24-PMQs_compressed.pdf" },
+            { label: "SSRN", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4991906" },
+            { label: "CESifo", url: "https://www.cesifo.org/en/publications/2024/working-paper/internal-versus-institutional-barriers-gender-equality-evidence" }
+          ]
         },
       ],
     },
@@ -53,9 +60,11 @@ export const SectionConfigs: SectionDefinition[] = [
       publications: [
         {
           title: "The Unintended Consequences of Technical Change: Evidence from the Green Revolution in Indonesia",
-          description: "(with Yeonha Jung and Gedeon Lim)",
+          description: [
+            { name: "Yeonha Jung", link: "https://sites.google.com/site/yhjungecon" },
+            { name: "Gedeon Lim", link: "https://sites.google.com/a/bu.edu/gedeonlim/home" },
+          ],
         },
       ],
     },
   ];
-  
