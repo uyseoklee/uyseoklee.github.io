@@ -1,6 +1,6 @@
 export interface WorkingPaper {
   title: string;
-  description: string;
+  description: string | { name: string; link?: string }[];
   link: string;
 }
 
@@ -15,7 +15,11 @@ export const WPSectionConfigs: SectionDefinition[] = [
       workingpapers: [
         {
           title: "Internal Versus Institutional Barriers to Gender Equality: Evidence From British Politics",
-          description: "(with Noor Kumar, Matt Lowe, and Olaitan Ogunnote)",
+          description: [
+            { name: "Noor Kumar", link: "" },
+            { name: "Matt Lowe", link: "https://mattlowe.site/" },
+            { name: "Olaitan Ogunnote", link: "" },
+          ],
           link: "https://github.com/uyseoklee/uyseoklee.github.io/raw/main/papers/Kumar-Lee-Lowe-Ogunnote-25may24-PMQs_compressed.pdf",
         },
       ],
