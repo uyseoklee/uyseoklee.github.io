@@ -64,3 +64,13 @@ ul {
   list-style: none;
   /*padding-left: 0;*/
 }
+
+/*Color of paper titles*/
+.publication-title {
+  color: black; /* Replace with your desired color */
+}
+
+a {
+  color: blue; /* This will apply blue color to all links */
+  text-decoration: none; /* Optional: removes underline from links */
+}
