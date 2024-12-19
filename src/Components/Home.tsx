@@ -6,12 +6,8 @@ const Home: React.FC = () => {
   return (
     <div className="resume-panel">
       <section>
-        <h2>Home</h2>
         <p>
-          {"Welcome to my website! I am a Ph.D. candidate in economics at the University of British Columbia, currently in my 4th year."}
-        </p>
-        <p>
-          {"I study the causes and consequences of "}
+          {"Welcome to my website! I am a Ph.D. candidate in economics at the University of British Columbia, currently in my 4th year. I study the causes and consequences of "}
           <em>culture</em>
           {" - the values, beliefs, and knowledge that affects human behavior and is transmitted between individuals."}
         </p>
