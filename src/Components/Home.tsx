@@ -28,7 +28,7 @@ const Home: React.FC = () => {
             {section.publications.map((publication, pubIndex) => (
               <li key={pubIndex}>
                 <a href={publication.link} target="_blank" rel="noopener noreferrer">
-                <b>{publication.title}</b>
+                <div style={{ color: 'black', fontSize: '16px', fontWeight: 'bold' }}>{publication.title}</div>
                 </a>
                 {/* Only render the description without the colon */}
                 <span> {publication.description}</span> {/* No colon here */}
