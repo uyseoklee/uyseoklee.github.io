@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileImage from "./profile_picture.png";
+import ProfileImage from "./headshot_2025_feb.png";
 
 const Profile: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const Profile: React.FC = () => {
       <hr/>
       <p><b>Email: </b>{"uyseoklee@student.ubc.ca"}</p>
       <p>[<a
-        href={"https://github.com/uyseoklee/uyseoklee.github.io/raw/main/src/Components/CV_Uyseok_Lee_Academic.pdf"}
+        href={"https://uyseoklee.github.io/papers/CV_Uyseok_Lee_Academic.pdf"}
         target="_blank"
         rel="noopener noreferrer"
       >

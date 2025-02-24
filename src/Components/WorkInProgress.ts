@@ -13,7 +13,7 @@ export const WIPSectionConfigs: SectionDefinition[] = [
       title: "Work In Progress",
       worksinprogress: [
         {
-          title: "The Unintended Consequences of Technical Change: Evidence from the Green Revolution in Indonesia",
+          title: "The Green Revolution and Cultural Change: Evidence from Indonesia",
           description: [
             { name: "Yeonha Jung", link: "https://sites.google.com/site/yhjungecon" },
             { name: "Gedeon Lim", link: "https://sites.google.com/a/bu.edu/gedeonlim/home" },

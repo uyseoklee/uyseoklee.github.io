@@ -62,6 +62,12 @@ const Home: React.FC = () => {
                   publication.description
                 )}
               </div>
+                {/* Display Revise & Resubmit if available */}
+                {publication.revise && (
+                  <div style={{ fontSize: '16px', color: 'black', marginBottom: '4px' }}>
+                    {publication.revise.split(",")[0]}, <em>{publication.revise.split(",")[1].trim()}</em>
+                  </div>
+                )}
                 {/* Render custom links dynamically with square brackets */}
                 {publication.links && publication.links.length > 0 && (
                   <div style={{ fontSize: '16px', color: 'black', marginBottom: '4px' }}>
