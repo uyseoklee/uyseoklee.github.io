@@ -16,7 +16,7 @@ const Profile: React.FC = () => {
       <hr/>
       <p><b>Email: </b>{"uyseoklee@student.ubc.ca"}</p>
       <p>[<a
-        href={"https://uyseoklee.github.io/papers/CV_Uyseok_Lee_Academic.pdf"}
+        href={"/files/CV_Uyseok_Lee_Academic.pdf"}
         target="_blank"
         rel="noopener noreferrer"
       >

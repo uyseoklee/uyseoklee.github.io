@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && npm run copy-static-files && gh-pages -d dist",
     "build": "tsc -b && vite build",
+    "copy-static-files": "copyfiles -u 1 files/* dist/files",
     "lint": "eslint .",
     "preview": "vite preview"
   },
